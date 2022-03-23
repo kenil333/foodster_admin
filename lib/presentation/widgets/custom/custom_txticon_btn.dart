@@ -34,14 +34,15 @@ class CustomTitleIconBtn extends StatelessWidget {
           color: whit,
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: size.width * 0.052,
-                color: txtcol,
-                fontWeight: FontWeight.bold,
+            Expanded(
+              child: Text(
+                title,
+                style: TextStyle(
+                  fontSize: size.width * 0.052,
+                  color: txtcol,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             Image.asset(

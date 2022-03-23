@@ -159,6 +159,16 @@ class DashboardScreen extends StatelessWidget {
                               routepush(context, const CategoryTagScreen());
                             },
                           ),
+                    _appstate.usertyperx.value != "Admin" &&
+                            _appstate.usertyperx.value != "Super"
+                        ? Container()
+                        : CustomTitleIconBtn(
+                            size: size,
+                            title: "App Strings",
+                            onclick: () {
+                              routepush(context, const AppStringScreen());
+                            },
+                          ),
                   ],
                 ),
               ),

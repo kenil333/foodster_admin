@@ -54,6 +54,9 @@ export './../presentation/pages/dashboard/category/category_edit_screen.dart';
 export './../presentation/pages/dashboard/category/tag_add_screen.dart';
 export './../presentation/pages/dashboard/category/tag_edit_screen.dart';
 
+export './../presentation/pages/dashboard/appstring/appstring_screen.dart';
+export './../presentation/pages/dashboard/appstring/appstring_edit_screen.dart';
+
 export './../presentation/bloc/dashboard/category/tag_add_bloc.dart';
 export './../presentation/bloc/dashboard/category/tag_edit_bloc.dart';
 export './../presentation/bloc/dashboard/category/category_add_bloc.dart';
@@ -96,6 +99,7 @@ export './../data/models/dish_model.dart';
 export './../data/models/admin_model.dart';
 export './../data/models/appuser_model.dart';
 export './../data/models/analystic_model.dart';
+export './../data/models/appstring.dart';
 
 export './../presentation/widgets/custom/custom_method.dart';
 export './../presentation/widgets/custom/custom_btn.dart';

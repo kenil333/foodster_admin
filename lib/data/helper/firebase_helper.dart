@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import './../../domain/all.dart';
@@ -10,7 +11,11 @@ class FirebaseHelper {
   static final _fire = FirebaseDatabase.instance;
 
   static Future<void> removeimagefromurl(String url) async {
-    await FirebaseStorage.instance.refFromURL(url).delete();
+    try {
+      await FirebaseStorage.instance.refFromURL(url).delete();
+    } catch (e) {
+      debugPrint("===>  Error   ===    $e");
+    }
   }
 
   static Future<String> getimageurl(
@@ -71,6 +76,10 @@ class FirebaseHelper {
 
   static Stream notificationstream() {
     return _fire.ref("Notifications").onValue;
+  }
+
+  static Stream appstringstream() {
+    return _fire.ref("AppString").onValue;
   }
 
   static Stream bannerstream() {
@@ -784,5 +793,9 @@ class FirebaseHelper {
       },
     );
     done(_tags);
+  }
+
+  static Future<void> changearbicstring(int index, String word) async {
+    await _fire.ref("AppString/$index/$arabiclangstr").set(word);
   }
 }
